@@ -17,3 +17,24 @@ const logger = (message: string): void => {         // can optionally return nul
 const throwError = (message: string): never => {    // will *never* execute function completely - **rare**
     throw new Error(message);
 }
+
+const forecast = {
+    date: new Date(),
+    weather: 'sunny'
+}
+
+const logWeather = (forecast: {date: Date, weather: string}): void => {
+    console.log(forecast.date);
+    console.log(forecast.weather);
+}
+
+// ES2015
+const logWeatherEs2015 = ({date, weather}) => {
+    console.log(date);
+    console.log(weather);
+}
+
+const logWeatherEs2015Ts = ({date, weather}: {date: Date, weather: string}): void => {
+    console.log(forecast.date);
+    console.log(forecast.weather);
+}
